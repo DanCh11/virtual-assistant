@@ -9,8 +9,11 @@ from model import NeuralNetwork
 from nltk_utils import stem, tokenize, bag_of_words
 
 
-with open('../data.json', 'r') as f:
+with open('./data/data.json', 'r') as f:
     data = json.load(f)
+    
+
+
 
 all_words = []
 tags = []
@@ -30,6 +33,7 @@ all_words = sorted(set(all_words))
 tags = sorted(set(tags))
 print(tags)
 
+
 x_train = []
 y_train = []
 
@@ -42,6 +46,7 @@ for (pattern_sentence, tag) in xy:
 
 x_train = np.array(x_train)
 y_train = np.array(y_train)
+
 
 class ChatDataset(Dataset):
     def __init__(self) -> None:
@@ -56,7 +61,9 @@ class ChatDataset(Dataset):
     def __len__(self) -> int:
         return self.n_samples
 
+
 # Hyperparams
+
 batch_size = 8 
 hidden_size = 8
 output_size = len(tags)
@@ -100,7 +107,7 @@ data = {
     "tags": tags
 }
 
-FILE = 'data.pth'
+FILE = './data/data.pth'
 torch.save(data, FILE)
 
 print(f'training complete. file saved to {FILE}')
