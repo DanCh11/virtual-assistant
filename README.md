@@ -5,19 +5,19 @@ Virtual Assistan Bot
 First of all you need to install the Pytorch library.
 For every OS there is a different type of installation:
 
-Windows:
+### Windows:
 pip install torch==1.6.0+cpu torchvision==0.7.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
-Instalation with conda:
+#### Instalation with conda:
 conda install pytorch torchvision cpuonly -c pytorch
 
-MacOS:
+### MacOS:
 pip install torch torchvision
-Instalation with conda:
+#### Instalation with conda:
 conda install pytorch torchvision -c pytorch
 
-Linux:
+### Linux:
 pip install torch==1.6.0+cpu torchvision==0.7.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
-Instalation with conda:
+#### Instalation with conda:
 conda install pytorch torchvision cpuonly -c pytorch
 
 If you are on linux, install libasound for PyAudio compatibility   
